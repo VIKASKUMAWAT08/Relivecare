@@ -1,7 +1,6 @@
 import React from 'react';
 import { Check, HeartPulse, Sparkles, ArrowRight } from 'lucide-react';
 import { SectionHeading } from '../common/SectionHeading';
-import { CLINIC_INFO } from '../../config/clinicData';
 import { IMAGES } from '../../config/images';
 
 export function About() {
@@ -25,7 +24,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-slate-50 relative overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <SectionHeading
@@ -34,17 +33,21 @@ export function About() {
           subtitle="Located in Pachar, Rajasthan, ReliveCare is dedicated to helping individuals recover from pain, rebuild physical confidence, and regain their active lifestyle."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mt-8">
           
           {/* Left Column: Visuals with Real Treatment Photo Showcase (6 cols) */}
           <div className="lg:col-span-6 space-y-4">
             <div className="relative">
               {/* Primary Visual: Real In-Clinic Treatment Photo */}
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-white aspect-4/3 relative">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200/80 bg-white aspect-4/3 relative">
                 <img
                   src={IMAGES.clinicTreatments.treatmentReal1.src}
                   alt={IMAGES.clinicTreatments.treatmentReal1.alt}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="450"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 
@@ -61,9 +64,9 @@ export function About() {
               </div>
 
               {/* Floating Quality Badge */}
-              <div className="hidden sm:flex absolute -bottom-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-slate-200 items-center gap-3.5 max-w-xs">
-                <div className="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200">
-                  <HeartPulse className="w-6 h-6" />
+              <div className="hidden sm:flex absolute -bottom-3 -right-3 bg-white p-3.5 rounded-2xl shadow-xl border border-slate-200 items-center gap-3 max-w-xs">
+                <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-200">
+                  <HeartPulse className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-900">Functional Recovery</p>
@@ -74,8 +77,8 @@ export function About() {
           </div>
 
           {/* Right Column: Narrative & Values (6 cols) */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="space-y-4">
+          <div className="lg:col-span-6 space-y-4">
+            <div className="space-y-3">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-100/70 text-teal-800 text-xs font-bold">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Our Philosophy of Care</span>
@@ -85,16 +88,16 @@ export function About() {
                 Recovery is more than just temporary pain relief — it is rebuilding your body’s strength and functional mobility.
               </h3>
 
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 At ReliveCare Physiotherapy, Rehabilitation &amp; Wellness Center, our clinical specialists focus on understanding the root biomechanical factors contributing to your discomfort. Whether you are dealing with sports injuries, chronic spinal strain, post-surgical stiffness, or age-related joint conditions, we tailor every exercise and therapeutic modality to your unique stage of recovery.
               </p>
             </div>
 
             {/* Highlights List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
               {highlights.map((item, idx) => (
-                <div key={idx} className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
-                  <div className="flex items-center gap-2 mb-1.5 text-teal-800 font-bold text-xs">
+                <div key={idx} className="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <div className="flex items-center gap-2 mb-1 text-teal-800 font-bold text-xs">
                     <div className="w-4 h-4 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 shrink-0">
                       <Check className="w-2.5 h-2.5 stroke-[3]" />
                     </div>
@@ -111,7 +114,7 @@ export function About() {
             <div className="pt-2">
               <a
                 href="#appointment"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold shadow-md transition-all active:scale-98"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold shadow-sm transition-all active:scale-98"
               >
                 <span>Schedule an In-Person Consultation</span>
                 <ArrowRight className="w-4 h-4" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Calendar, X, Sparkles, Activity } from 'lucide-react';
+import { CheckCircle, Calendar, Sparkles, Activity } from 'lucide-react';
 import { Modal } from '../common/Modal';
 
 export function TreatmentModal({ treatment, isOpen, onClose, onSelectForBooking }) {

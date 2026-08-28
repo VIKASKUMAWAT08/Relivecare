@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, ArrowUp, Star, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, ArrowUp, Star, Navigation, Home } from 'lucide-react';
 import { CLINIC_INFO } from '../../config/clinicData';
 import { IMAGES } from '../../config/images';
 
@@ -63,7 +63,12 @@ export function Footer() {
             </p>
 
             {/* Google Rating Badge */}
-            <div className="inline-flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+            <a
+              href={CLINIC_INFO.googleStats.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-800 transition-colors"
+            >
               <div className="flex text-amber-400">
                 <Star className="w-3.5 h-3.5 fill-amber-400" />
                 <Star className="w-3.5 h-3.5 fill-amber-400" />
@@ -73,7 +78,7 @@ export function Footer() {
               </div>
               <span className="text-xs font-bold text-white">{CLINIC_INFO.googleStats.rating}</span>
               <span className="text-[11px] text-slate-400">({CLINIC_INFO.googleStats.reviewCount} Google Reviews)</span>
-            </div>
+            </a>
 
             {/* Social Icons */}
             <div className="pt-2 flex items-center gap-2.5">
@@ -118,9 +123,10 @@ export function Footer() {
           {/* Col 2: Quick Links & Treatments (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2">
-              Key Treatments
+              Services &amp; Programs
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
+              <li><a href="#home-physiotherapy" className="text-teal-300 font-semibold hover:text-teal-200 transition-colors flex items-center gap-1.5"><Home className="w-3.5 h-3.5" />Home Physiotherapy Visit</a></li>
               <li><a href="#treatments" className="hover:text-teal-400 transition-colors">Knee Pain &amp; Rehabilitation</a></li>
               <li><a href="#treatments" className="hover:text-teal-400 transition-colors">Back &amp; Spine Pain Relief</a></li>
               <li><a href="#treatments" className="hover:text-teal-400 transition-colors">Shoulder Pain &amp; Mobility</a></li>
@@ -191,7 +197,7 @@ export function Footer() {
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
                 <a
-                  href={`mailto:${CLINIC_INFO.contact.email}`}
+                  href={CLINIC_INFO.contact.emailMailto}
                   className="text-slate-300 hover:text-teal-300 text-xs transition-colors"
                 >
                   {CLINIC_INFO.contact.email}

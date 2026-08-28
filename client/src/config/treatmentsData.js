@@ -3,7 +3,7 @@ import { IMAGES } from './images';
 /**
  * 12 Comprehensive Clinical Treatment Specialties at ReliveCare
  * Strictly focused on common patient conditions: Knee pain, Back pain, Shoulder pain,
- * Neck pain, Joint pain, Sports injuries, Manual therapy, Post-op rehab, etc.
+ * Neck pain, Joint pain, Sports injuries, Manual therapy, Post-op rehab, Neurological rehab, etc.
  */
 
 export const TREATMENTS_DATA = [
@@ -14,7 +14,7 @@ export const TREATMENTS_DATA = [
     tag: "High Demand",
     shortDesc: "Specialized therapy for osteoarthritis, meniscus recovery, patellofemoral pain, and knee joint stiffness.",
     fullDesc: "Our knee rehabilitation protocol combines gentle joint mobilization, patellar tracking correction, and targeted quadriceps/hamstring strengthening to reduce weight-bearing discomfort and restore walking confidence.",
-    image: IMAGES?.treatments?.kneePain?.src || "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.kneePain?.src || "",
     alt: IMAGES?.treatments?.kneePain?.alt || "Physiotherapist treating patient knee joint",
     conditions: [
       "Knee Osteoarthritis & joint stiffness",
@@ -36,7 +36,7 @@ export const TREATMENTS_DATA = [
     tag: "Core Specialty",
     shortDesc: "Targeted physical therapy for lumbar strain, slip disc, sciatica, and chronic lower back stiffness.",
     fullDesc: "Spinal pain often results from biomechanical compensations, disc compression, or postural imbalances. We relieve neural irritation through spinal decompression, core stability exercises, and manual joint mobilization.",
-    image: IMAGES?.treatments?.backPain?.src || "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.backPain?.src || "",
     alt: IMAGES?.treatments?.backPain?.alt || "Physiotherapist performing lumbar spine mobilization",
     conditions: [
       "Lumbar disc bulge / herniation",
@@ -58,7 +58,7 @@ export const TREATMENTS_DATA = [
     tag: "Mobility Care",
     shortDesc: "Targeted mobilization and strengthening for frozen shoulder, rotator cuff tendonitis, and impingement.",
     fullDesc: "Shoulder conditions can severely limit daily reaching and overhead tasks. Our phased approach gently restores lost capsular mobility before progressively reloading the rotator cuff and scapular musculature.",
-    image: IMAGES?.treatments?.shoulderPain?.src || "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.shoulderPain?.src || "",
     alt: IMAGES?.treatments?.shoulderPain?.alt || "Physical therapist mobilizing shoulder joint",
     conditions: [
       "Frozen Shoulder (Adhesive Capsulitis)",
@@ -80,7 +80,7 @@ export const TREATMENTS_DATA = [
     tag: "Spine Focus",
     shortDesc: "Comprehensive therapy for cervical spondylosis, neck stiffness, trap spasms, and tech-neck strain.",
     fullDesc: "Modern desk work and cervical strain create chronic muscular tension and restricted vertebral motion. We combine manual cervical traction, deep neck flexor strengthening, and upper thoracic mobilization.",
-    image: IMAGES?.treatments?.neckPain?.src || "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.neckPain?.src || "",
     alt: IMAGES?.treatments?.neckPain?.alt || "Cervical spine physical therapy",
     conditions: [
       "Cervical spondylosis & disc wear",
@@ -102,7 +102,7 @@ export const TREATMENTS_DATA = [
     tag: "Specialized Care",
     shortDesc: "Non-invasive rehabilitation for degenerative joint conditions, cartilage preservation, and joint mobility.",
     fullDesc: "Structured therapeutic exercise and manual techniques to alleviate joint friction, strengthen surrounding stabilizing muscles, reduce inflammation, and maintain functional independence.",
-    image: IMAGES?.treatments?.jointPain?.src || "https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.jointPain?.src || "",
     alt: IMAGES?.treatments?.jointPain?.alt || "Clinical joint mobilization therapy",
     conditions: [
       "Osteoarthritis (Hip, Knee, Spine)",
@@ -124,7 +124,7 @@ export const TREATMENTS_DATA = [
     tag: "Active Recovery",
     shortDesc: "Phased rehabilitation for athletic sprains, muscle tears, tendonitis, and safe return to sport.",
     fullDesc: "From recreational players to dedicated athletes, our sports recovery protocols focus on tissue healing, proprioceptive retraining, and functional movement re-conditioning to ensure safe, confident recovery.",
-    image: IMAGES?.treatments?.sportsInjuries?.src || "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.sportsInjuries?.src || "",
     alt: IMAGES?.treatments?.sportsInjuries?.alt || "Sports injury functional rehabilitation",
     conditions: [
       "Ligament sprains (Ankle, ACL, MCL)",
@@ -146,7 +146,7 @@ export const TREATMENTS_DATA = [
     tag: "Clinical Technique",
     shortDesc: "Hands-on joint mobilization, soft tissue release, and myofascial decompression for immediate pain relief.",
     fullDesc: "Precise hands-on clinical interventions performed by our physiotherapists to modulate pain, reduce intra-articular pressure, release deep muscular tension, and restore joint gliding mechanics.",
-    image: IMAGES?.treatments?.manualTherapy?.src || "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.manualTherapy?.src || "",
     alt: IMAGES?.treatments?.manualTherapy?.alt || "Hands-on clinical manual physical therapy",
     conditions: [
       "Restricted joint capsular movement",
@@ -168,7 +168,7 @@ export const TREATMENTS_DATA = [
     tag: "Structured Phases",
     shortDesc: "Staged rehabilitation following joint replacements (TKR, THR), arthroscopic surgeries, and fractures.",
     fullDesc: "Structured, surgeon-aligned recovery phases focusing on timely swelling reduction, scar tissue mobilization, safe progressive weight-bearing, and full restoration of daily functional autonomy.",
-    image: IMAGES?.treatments?.postOperative?.src || "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.postOperative?.src || "",
     alt: IMAGES?.treatments?.postOperative?.alt || "Post-operative orthopedic rehabilitation",
     conditions: [
       "Total Knee Replacement (TKR)",
@@ -190,7 +190,7 @@ export const TREATMENTS_DATA = [
     tag: "Motor Retraining",
     shortDesc: "Physical therapy for stroke recovery, facial palsy (Bell's palsy), balance deficits, and nerve injuries.",
     fullDesc: "Task-oriented physical therapy protocols leveraging neuromuscular re-education to improve limb coordination, muscle tone, balance confidence, and daily functional living.",
-    image: IMAGES?.treatments?.neurological?.src || "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.neurological?.src || "",
     alt: IMAGES?.treatments?.neurological?.alt || "Neurological physical therapy",
     conditions: [
       "Post-stroke hemiparesis & walking support",
@@ -212,7 +212,7 @@ export const TREATMENTS_DATA = [
     tag: "Supervised Care",
     shortDesc: "Scientific exercise prescription focused on progressive loading, muscle balance, and functional stamina.",
     fullDesc: "Supervised therapeutic exercises designed to transition the patient from pain relief to physical vitality through tailored resistance, stability drills, and movement re-education.",
-    image: IMAGES?.treatments?.exerciseTherapy?.src || "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.exerciseTherapy?.src || "",
     alt: IMAGES?.treatments?.exerciseTherapy?.alt || "Supervised exercise therapy",
     conditions: [
       "General muscular deconditioning",
@@ -234,7 +234,7 @@ export const TREATMENTS_DATA = [
     tag: "Lifestyle & Spine",
     shortDesc: "Postural evaluation, ergonomic workstation adjustments, and muscle balancing for modern sedentary lifestyles.",
     fullDesc: "We assess postural compensations, stretch tight anterior muscle chains, and strengthen posterior spinal stabilizers to eliminate desk-related aches and postural fatigue.",
-    image: IMAGES?.treatments?.postureCorrection?.src || "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.postureCorrection?.src || "",
     alt: IMAGES?.treatments?.postureCorrection?.alt || "Postural assessment and spinal alignment",
     conditions: [
       "Forward head & rounded shoulders",
@@ -256,7 +256,7 @@ export const TREATMENTS_DATA = [
     tag: "Gentle Care",
     shortDesc: "Gentle physical therapy dedicated to elderly balance, joint flexibility, fall prevention, and mobility.",
     fullDesc: "Helping senior individuals maintain active independence, walking confidence, and safety at home through gentle, low-impact exercise therapy and joint mobility maintenance.",
-    image: IMAGES?.treatments?.geriatricCare?.src || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85",
+    image: IMAGES?.treatments?.geriatricCare?.src || "",
     alt: IMAGES?.treatments?.geriatricCare?.alt || "Gentle physical therapy for senior mobility",
     conditions: [
       "Age-related balance instability & fall risks",

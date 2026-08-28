@@ -8,13 +8,14 @@ import { FloatingWhatsApp } from './components/layout/FloatingWhatsApp';
 import { Hero } from './components/sections/Hero';
 import { TrustReviews } from './components/sections/TrustReviews';
 import { About } from './components/sections/About';
-import { Treatments } from './components/sections/Treatments';
-import { Experience } from './components/sections/Experience';
-import { Rehabilitation } from './components/sections/Rehabilitation';
 import { Doctors } from './components/sections/Doctors';
+import { Treatments } from './components/sections/Treatments';
+import { HomePhysiotherapy } from './components/sections/HomePhysiotherapy';
+import { Rehabilitation } from './components/sections/Rehabilitation';
+import { Experience } from './components/sections/Experience';
 import { PatientStories } from './components/sections/PatientStories';
-import { Gallery } from './components/sections/Gallery';
 import { SocialMedia } from './components/sections/SocialMedia';
+import { Gallery } from './components/sections/Gallery';
 import { Appointment } from './components/sections/Appointment';
 import { ContactLocation } from './components/sections/ContactLocation';
 
@@ -55,28 +56,31 @@ export function App() {
         {/* 5. Specialized Treatments & Services (12 Comprehensive Cards) */}
         <Treatments onSelectTreatmentForBooking={handleSelectTreatment} />
 
-        {/* 6. Dedicated Rehabilitation Focus Hub */}
+        {/* 6. Dedicated Home Physiotherapy Feature */}
+        <HomePhysiotherapy onSelectHomeVisitForBooking={handleSelectTreatment} />
+
+        {/* 7. Dedicated Rehabilitation Focus Hub */}
         <Rehabilitation />
 
-        {/* 7. Physiotherapy Experience (5-Step Patient Journey) */}
+        {/* 8. Physiotherapy Experience (5-Step Patient Journey) */}
         <Experience />
 
-        {/* 8. Real Patient Success Stories & Feedback */}
+        {/* 9. Real Patient Success Stories & Feedback */}
         <PatientStories />
 
-        {/* 9. Patient Video Reviews (Official YouTube Shorts) & Social Hub */}
+        {/* 10. Patient Video Reviews (Official YouTube Shorts) & Social Hub */}
         <SocialMedia />
 
-        {/* 10. Interactive Gallery & Clinical Facilities */}
+        {/* 11. Interactive Gallery & Clinical Facilities */}
         <Gallery />
 
-        {/* 11. Appointment Scheduling Engine (with WhatsApp Integration) */}
+        {/* 12. Appointment Scheduling Engine (with WhatsApp Integration) */}
         <Appointment 
           preselectedTreatment={selectedTreatment}
           preselectedDoctor={selectedDoctor}
         />
 
-        {/* 12. Contact & Location (Pachar, Rajasthan) */}
+        {/* 13. Contact & Location (Pachar, Rajasthan) */}
         <ContactLocation />
       </main>
 

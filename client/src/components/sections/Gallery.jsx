@@ -29,22 +29,22 @@ export function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-16 sm:py-24 bg-white relative">
+    <section id="gallery" className="py-12 sm:py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <SectionHeading
           badge="Visual Showcase"
-          title="Clinical Care, Rehabilitation &amp; Specialists"
+          title="Clinical Care, Rehabilitation &amp; Facilities"
           subtitle="Explore our physiotherapy treatment sessions, clinical care environment, rehabilitation modalities, and qualified physiotherapists."
         />
 
         {/* Category Tabs */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 pt-2 gap-2 scrollbar-none mb-10">
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-3 pt-1 gap-2 scrollbar-none mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-teal-700 text-white shadow-xs'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
@@ -56,18 +56,21 @@ export function Gallery() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredItems.map((item, idx) => (
             <div
               key={item.id}
               onClick={() => openLightbox(idx)}
-              className="group relative rounded-2xl overflow-hidden shadow-xs hover:shadow-xl border border-slate-200 aspect-4/3 bg-slate-100 cursor-pointer transition-all duration-300"
+              className="group relative rounded-2xl overflow-hidden shadow-2xs hover:shadow-xl border border-slate-200 aspect-4/3 bg-slate-100 cursor-pointer transition-all duration-300"
             >
               <img
                 src={item.src}
                 alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
               />
 
               {/* Overlay on hover */}

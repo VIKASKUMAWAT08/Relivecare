@@ -30,7 +30,7 @@ export function ContactLocation() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-24 bg-slate-50 relative">
+    <section id="contact" className="py-12 sm:py-16 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <SectionHeading
@@ -39,13 +39,13 @@ export function ContactLocation() {
           subtitle="Located near Bhomyaji Mandir in Pawan Vihar, Ramkui, Pachar. Reach out directly for directions or consultation inquiries."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mt-8">
           
           {/* Left Column: Contact Cards & Inquiries (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-5">
             
             {/* Address Card */}
-            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-2xs space-y-3.5">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
@@ -57,7 +57,7 @@ export function ContactLocation() {
                   <p className="text-xs font-semibold text-teal-700 mt-0.5">
                     {CLINIC_INFO.name}
                   </p>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1.5 font-medium">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-medium">
                     {CLINIC_INFO.location.fullAddress}
                   </p>
                 </div>
@@ -68,10 +68,10 @@ export function ContactLocation() {
                   href={CLINIC_INFO.location.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold transition-all shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold transition-all shadow-2xs"
                 >
                   <Navigation className="w-3.5 h-3.5" />
-                  <span>Get Driving Directions</span>
+                  <span>Get Directions</span>
                 </a>
 
                 <a
@@ -89,20 +89,20 @@ export function ContactLocation() {
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition-all"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
-                  <span>WhatsApp Chat</span>
+                  <span>WhatsApp</span>
                 </a>
               </div>
             </div>
 
             {/* Timings & Direct Contact */}
-            <div className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-xs space-y-4">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+            <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-2xs space-y-3.5">
+              <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                 Direct Contact &amp; Hours
               </h3>
 
-              <div className="space-y-3 text-xs sm:text-sm text-slate-600">
+              <div className="space-y-2.5 text-xs sm:text-sm text-slate-600">
                 <div className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-teal-600 shrink-0 mt-1" />
+                  <Clock className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-slate-900">{CLINIC_INFO.hours.weekdays}</p>
                     <p className="text-xs text-slate-500">{CLINIC_INFO.hours.sunday}</p>
@@ -110,7 +110,7 @@ export function ContactLocation() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-4 h-4 text-teal-600 shrink-0 mt-1" />
+                  <Phone className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
                   <div>
                     <a
                       href={CLINIC_INFO.contact.phoneTel}
@@ -123,22 +123,27 @@ export function ContactLocation() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-teal-600 shrink-0 mt-1" />
+                  <Mail className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-slate-900">{CLINIC_INFO.contact.email}</p>
-                    <p className="text-[11px] text-slate-400">Email for inquiries &amp; medical reports</p>
+                    <a 
+                      href={CLINIC_INFO.contact.emailMailto}
+                      className="font-semibold text-slate-900 hover:text-teal-700 transition-colors"
+                    >
+                      {CLINIC_INFO.contact.email}
+                    </a>
+                    <p className="text-[11px] text-slate-400">Official email for inquiries &amp; reports</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Quick Inquiry Form */}
-            <div className="bg-slate-900 text-white p-6 rounded-2xl border border-slate-800 shadow-md">
-              <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+            <div className="bg-slate-900 text-white p-5 sm:p-6 rounded-2xl border border-slate-800 shadow-md">
+              <h4 className="text-sm font-bold text-white mb-1.5 flex items-center gap-2">
                 <MessageSquare className="w-4 h-4 text-teal-400" />
                 <span>Have a Quick Question?</span>
               </h4>
-              <p className="text-xs text-slate-400 mb-4">
+              <p className="text-xs text-slate-400 mb-3.5">
                 Leave your name and phone number and our clinic staff will reach out to assist you.
               </p>
 
@@ -148,14 +153,14 @@ export function ContactLocation() {
                   <span>Thank you! Your message has been sent.</span>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-3 text-xs">
+                <form onSubmit={handleSubmit} className="space-y-2.5 text-xs">
                   <input
                     type="text"
                     required
                     placeholder="Your Name"
                     value={contactForm.name}
                     onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs placeholder:text-slate-500 focus:outline-hidden focus:border-teal-500"
+                    className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs placeholder:text-slate-500 focus:outline-hidden focus:border-teal-500"
                   />
                   <input
                     type="tel"
@@ -163,14 +168,14 @@ export function ContactLocation() {
                     placeholder="Your Phone Number"
                     value={contactForm.phone}
                     onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs placeholder:text-slate-500 focus:outline-hidden focus:border-teal-500"
+                    className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs placeholder:text-slate-500 focus:outline-hidden focus:border-teal-500"
                   />
                   <textarea
                     rows="2"
                     placeholder="Your question or message (optional)"
                     value={contactForm.message}
                     onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs placeholder:text-slate-500 focus:outline-hidden focus:border-teal-500"
+                    className="w-full px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs placeholder:text-slate-500 focus:outline-hidden focus:border-teal-500"
                   ></textarea>
                   <button
                     type="submit"
@@ -188,9 +193,9 @@ export function ContactLocation() {
 
           {/* Right Column: Google Maps Embed (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-3 sm:p-4 rounded-3xl border border-slate-200 shadow-md">
+            <div className="bg-white p-3 sm:p-4 rounded-3xl border border-slate-200 shadow-2xs">
               
-              <div className="relative w-full h-[460px] sm:h-[540px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+              <div className="relative w-full h-[400px] sm:h-[480px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
                 <iframe
                   title="ReliveCare Physiotherapy Center Pachar Map Location"
                   src={CLINIC_INFO.location.mapEmbedUrl}
@@ -204,7 +209,7 @@ export function ContactLocation() {
                 ></iframe>
 
                 {/* Floating Map Card */}
-                <div className="absolute top-4 left-4 right-4 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200 shadow-lg text-xs space-y-1.5">
+                <div className="absolute top-4 left-4 right-4 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200 shadow-lg text-xs space-y-1">
                   <div className="flex items-center gap-1.5 text-teal-800 font-extrabold text-sm">
                     <MapPin className="w-4 h-4 text-teal-600 shrink-0" />
                     <span>ReliveCare Center</span>

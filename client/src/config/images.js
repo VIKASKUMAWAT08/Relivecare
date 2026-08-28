@@ -2,7 +2,7 @@
  * Centralized Image Registry for ReliveCare
  * 
  * 1. Real Local Assets (/images/...) with dynamic Vite base path support for GitHub Pages
- * 2. Curated Clinical Physiotherapy Photography (Realistic clinical settings)
+ * 2. Curated Clinical Physiotherapy Photography (Strictly realistic clinical physiotherapy settings)
  */
 
 /**
@@ -28,7 +28,7 @@ export const IMAGES = {
   },
 
   // Doctors (Real Photographs)
-  // ORDER: Dr. Virendra Kumawat (First), Dr. Kamlesh Mahariya (Second)
+  // STRICT ORDER: Dr. Virendra Kumawat (First), Dr. Kamlesh Mahariya (Second)
   doctors: {
     drVirendra: {
       src: asset('/images/doctors/doctor-virendra-1.jpg.jpeg'),
@@ -58,6 +58,11 @@ export const IMAGES = {
       src: asset('/images/treatments/treatment-2.jpeg'),
       alt: "Clinical physiotherapy treatment session at ReliveCare Center",
       title: "Specialized Physical Therapy Treatment",
+    },
+    treatmentReal3: {
+      src: asset('/images/treatments/treatment-3.jpeg'),
+      alt: "Hands-on clinical physical therapy and joint care at ReliveCare Center",
+      title: "Targeted Physiotherapy & Joint Care",
     },
   },
 
@@ -95,88 +100,98 @@ export const IMAGES = {
 
   // About Section Visuals
   about: {
-    main: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=85",
-    alt: "Physiotherapist conducting a thorough physical mobility and joint assessment",
+    main: asset('/images/treatments/treatment-1.JPG.jpeg'),
+    alt: "Physiotherapist conducting a thorough clinical mobility and joint assessment",
     realTreatment: asset('/images/treatments/treatment-1.JPG.jpeg'),
+  },
+
+  // Home Physiotherapy Feature Image
+  homePhysio: {
+    src: asset('/images/physiotherapy/physiotherapy-1.jpg'),
+    alt: "Physiotherapist providing dedicated home rehabilitation and physical therapy care",
   },
 
   // Specialized Clinical Treatment Imagery (Strictly Clinical Physiotherapy)
   treatments: {
     kneePain: {
-      src: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=85",
-      alt: "Physiotherapist treating patient knee joint for osteoarthritis and ligament rehabilitation",
+      src: asset('/images/treatments/treatment-1.JPG.jpeg'),
+      alt: "Physiotherapist treating patient knee joint for osteoarthritis and mobility rehabilitation",
     },
     backPain: {
-      src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=85",
-      alt: "Physiotherapist performing lumbar spine mobilization for lower back pain relief",
+      src: asset('/images/treatments/treatment-3.jpeg'),
+      alt: "Physiotherapist performing targeted spinal joint care and rehabilitation",
     },
     shoulderPain: {
-      src: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=85",
+      src: asset('/images/physiotherapy/physiotherapy-2.jpg'),
       alt: "Physical therapist mobilizing shoulder joint for frozen shoulder and rotator cuff recovery",
     },
     neckPain: {
-      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=85",
-      alt: "Cervical spine physical therapy and neck pain relief treatment",
+      src: asset('/images/doctors/doctor-virendra-2.jpg.jpeg'),
+      alt: "Cervical spine physical therapy and postural neck pain relief consultation",
     },
     jointPain: {
-      src: "https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&w=800&q=85",
-      alt: "Clinical joint mobilization therapy for arthritis and stiffness",
+      src: asset('/images/treatments/treatment-2.jpeg'),
+      alt: "Clinical joint mobilization therapy for arthritis, stiffness, and pain relief",
     },
     sportsInjuries: {
-      src: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=85",
-      alt: "Sports injury functional rehabilitation and ligament recovery",
+      src: asset('/images/rehabilitation/rehabilitation-1.jpg'),
+      alt: "Sports injury functional rehabilitation and athletic movement recovery",
     },
     manualTherapy: {
-      src: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=85",
+      src: asset('/images/treatments/treatment-3.jpeg'),
       alt: "Hands-on clinical manual physical therapy and soft tissue mobilization",
     },
     postOperative: {
-      src: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=85",
+      src: asset('/images/physiotherapy/physiotherapy-1.jpg'),
       alt: "Post-operative orthopedic rehabilitation and supervised recovery",
     },
     neurological: {
-      src: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=85",
-      alt: "Neurological physical therapy for stroke recovery, balance, and motor retraining",
+      src: asset('/images/physiotherapy/physiotherapy-2.jpg'),
+      alt: "Neurological physical therapy for motor retraining, stroke recovery, and balance",
     },
     exerciseTherapy: {
-      src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85",
-      alt: "Supervised exercise therapy and therapeutic rehabilitation movements",
+      src: asset('/images/rehabilitation/rehabilitation-1.jpg'),
+      alt: "Supervised exercise therapy and therapeutic movement conditioning",
     },
     postureCorrection: {
-      src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=85",
+      src: asset('/images/rehabilitation/rehabilitation-2.jpg'),
       alt: "Postural assessment and spinal alignment rehabilitation",
     },
     geriatricCare: {
-      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85",
+      src: asset('/images/physiotherapy/physiotherapy-1.jpg'),
       alt: "Gentle physical therapy for senior mobility, joint flexibility, and fall prevention",
+    },
+    homePhysio: {
+      src: asset('/images/physiotherapy/physiotherapy-2.jpg'),
+      alt: "Personalized home physiotherapy session by certified therapist",
     },
   },
 
-  // Physiotherapy Experience Steps Visuals
+  // Physiotherapy Experience Steps Visuals (Strictly Clinical Physiotherapy)
   experience: {
     assessment: {
-      src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=85",
-      alt: "Step 1: Clinical movement and joint assessment",
+      src: asset('/images/doctors/doctor-virendra-2.jpg.jpeg'),
+      alt: "Step 1: Clinical movement and joint evaluation by physiotherapist",
       title: "1. Clinical Assessment",
     },
     manualTherapy: {
-      src: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=85",
+      src: asset('/images/treatments/treatment-3.jpeg'),
       alt: "Step 2: Hands-on manual therapy and joint mobilization",
       title: "2. Manual Therapy",
     },
     guidedExercise: {
-      src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85",
-      alt: "Step 3: Supervised therapeutic exercise",
+      src: asset('/images/rehabilitation/rehabilitation-1.jpg'),
+      alt: "Step 3: Supervised therapeutic exercise and guided movement",
       title: "3. Guided Exercise",
     },
     progressiveStrengthening: {
-      src: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=85",
-      alt: "Step 4: Progressive functional loading and mobility",
+      src: asset('/images/rehabilitation/rehabilitation-2.jpg'),
+      alt: "Step 4: Progressive functional loading and joint durability",
       title: "4. Progressive Rehab",
     },
     recoveryCare: {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=85",
-      alt: "Step 5: Long-term posture correction and ergonomics",
+      src: asset('/images/physiotherapy/physiotherapy-1.jpg'),
+      alt: "Step 5: Long-term mobility, posture ergonomics, and prevention",
       title: "5. Long-Term Recovery",
     },
   },
@@ -291,6 +306,14 @@ export const IMAGES = {
     },
     {
       id: "gal-10",
+      category: "Treatments",
+      title: "Targeted Clinical Physical Therapy",
+      src: asset('/images/treatments/treatment-3.jpeg'),
+      isRealClinicAsset: true,
+      caption: "Physiotherapy assessment and joint mobilization session at ReliveCare Center",
+    },
+    {
+      id: "gal-11",
       category: "Clinic",
       title: "ReliveCare Clinic Facility - 1",
       src: asset('/images/clinic/clinic-1.jpeg'),
@@ -298,7 +321,7 @@ export const IMAGES = {
       caption: "Modern clinical physiotherapy equipment and treatment area",
     },
     {
-      id: "gal-11",
+      id: "gal-12",
       category: "Clinic",
       title: "ReliveCare Clinic Facility - 2",
       src: asset('/images/clinic/clinic-2.jpeg'),
@@ -306,7 +329,7 @@ export const IMAGES = {
       caption: "Clean, professional, and patient-focused treatment environment",
     },
     {
-      id: "gal-12",
+      id: "gal-13",
       category: "Clinic",
       title: "ReliveCare Clinic Facility - 3",
       src: asset('/images/clinic/clinic-3.jpeg'),
@@ -314,7 +337,7 @@ export const IMAGES = {
       caption: "Dedicated rehabilitation and clinical therapy space",
     },
     {
-      id: "gal-13",
+      id: "gal-14",
       category: "Clinic",
       title: "ReliveCare Clinic Facility - 4",
       src: asset('/images/clinic/clinic-4.jpeg'),
@@ -322,7 +345,7 @@ export const IMAGES = {
       caption: "Comprehensive physiotherapy setup in Pachar, Rajasthan",
     },
     {
-      id: "gal-14",
+      id: "gal-15",
       category: "Clinic",
       title: "ReliveCare Clinic Facility - 5",
       src: asset('/images/clinic/clinic-5.jpeg'),
@@ -330,7 +353,7 @@ export const IMAGES = {
       caption: "Patient-centered physical recovery and care rooms",
     },
     {
-      id: "gal-15",
+      id: "gal-16",
       category: "Clinic",
       title: "ReliveCare Clinic Facility - 6",
       src: asset('/images/clinic/clinic-6.jpeg'),
@@ -355,7 +378,7 @@ export const IMAGES = {
     {
       id: "q4rDgus02hM",
       title: "Patient Experience | Recovery & Improvement Journey",
-      subtitle: "Real patient experience at ReliveCare Physiotherapy",
+      subtitle: "Real patient experience at ReliveCare",
       category: "Patient Experience",
       duration: "YouTube Shorts",
       thumbnail: "https://img.youtube.com/vi/q4rDgus02hM/hqdefault.jpg",
@@ -366,7 +389,7 @@ export const IMAGES = {
     {
       id: "0ysjjSZKl2o",
       title: "Patient Review | Journey Towards Better Movement",
-      subtitle: "Real patient experience at ReliveCare Physiotherapy",
+      subtitle: "Real patient experience at ReliveCare",
       category: "Patient Review",
       duration: "YouTube Shorts",
       thumbnail: "https://img.youtube.com/vi/0ysjjSZKl2o/hqdefault.jpg",
@@ -376,4 +399,3 @@ export const IMAGES = {
     },
   ],
 };
-

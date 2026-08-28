@@ -44,7 +44,7 @@ export function Rehabilitation() {
   ];
 
   return (
-    <section id="rehabilitation" className="py-16 sm:py-24 bg-slate-50 relative">
+    <section id="rehabilitation" className="py-12 sm:py-16 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <SectionHeading
@@ -54,11 +54,11 @@ export function Rehabilitation() {
         />
 
         {/* 4 Major Rehab Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-8">
           {rehabAreas.map((area) => (
             <div
               key={area.id}
-              className="bg-white rounded-2xl border border-slate-200 shadow-xs hover:shadow-xl hover:border-teal-300 transition-all duration-300 overflow-hidden flex flex-col group"
+              className="bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-xl hover:border-teal-300 transition-all duration-300 overflow-hidden flex flex-col group"
             >
               {/* Card Image */}
               <div className="relative aspect-16/9 overflow-hidden bg-slate-100">
@@ -67,14 +67,17 @@ export function Rehabilitation() {
                   alt={area.alt}
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="338"
                 />
-                <div className="absolute top-4 left-4 bg-teal-800/90 text-white text-xs font-semibold px-3 py-1 rounded-full border border-teal-600/50 backdrop-blur-xs">
+                <div className="absolute top-3.5 left-3.5 bg-teal-800/90 text-white text-xs font-semibold px-3 py-1 rounded-full border border-teal-600/50 backdrop-blur-xs">
                   {area.tag}
                 </div>
               </div>
 
               {/* Card Content */}
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
                     {area.title}
@@ -83,8 +86,8 @@ export function Rehabilitation() {
                     {area.desc}
                   </p>
 
-                  <div className="mt-4 pt-4 border-t border-slate-100">
-                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">
+                  <div className="mt-4 pt-3.5 border-t border-slate-100">
+                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
                       Focus Areas &amp; Clinical Scope:
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

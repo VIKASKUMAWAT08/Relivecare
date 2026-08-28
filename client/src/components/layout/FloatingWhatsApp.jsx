@@ -16,14 +16,14 @@ export function FloatingWhatsApp() {
         href={CLINIC_INFO.contact.floatingWhatsAppUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="group relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-108 active:scale-95 focus:outline-hidden focus:ring-4 focus:ring-[#25D366]/40"
+        aria-label="Chat on WhatsApp with ReliveCare Clinic"
+        className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-108 active:scale-95 focus:outline-hidden focus:ring-4 focus:ring-[#25D366]/40"
       >
         {/* Subtle pulsating outer ring */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 group-hover:opacity-60 animate-ping pointer-events-none" />
 
         {/* WhatsApp Icon */}
-        <WhatsAppSvgIcon className="w-7 h-7 sm:w-8 sm:h-8 relative z-10" />
+        <WhatsAppSvgIcon className="w-6 h-6 sm:w-7 sm:h-7 relative z-10" />
 
         {/* Tooltip on Desktop Hover */}
         <span className="hidden sm:group-hover:inline-block absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap border border-slate-700 animate-in fade-in slide-in-from-right-2">

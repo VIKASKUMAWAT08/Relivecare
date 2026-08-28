@@ -48,10 +48,10 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-16 sm:py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section id="experience" className="py-12 sm:py-16 bg-slate-900 text-white relative overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-teal-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-sky-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
@@ -63,7 +63,7 @@ export function Experience() {
         />
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-8">
           {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -80,6 +80,9 @@ export function Experience() {
                     alt={item.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                     loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="250"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   
@@ -90,10 +93,10 @@ export function Experience() {
                 </div>
 
                 {/* Step Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2.5">
-                    <div className="flex items-center gap-2.5 text-teal-400 font-bold text-sm">
-                      <Icon className="w-5 h-5 shrink-0" />
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-teal-400 font-bold text-sm">
+                      <Icon className="w-4 h-4 shrink-0" />
                       <h3 className="text-white text-base font-bold group-hover:text-teal-300 transition-colors leading-snug">
                         {item.title}
                       </h3>
@@ -126,7 +129,7 @@ export function Experience() {
               </p>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-4">
               <a
                 href="#appointment"
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal-400 hover:bg-teal-300 text-slate-950 font-bold text-xs shadow-lg transition-all active:scale-98"

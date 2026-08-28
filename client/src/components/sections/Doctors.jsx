@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Stethoscope, CheckCircle2, GraduationCap, Clock } from 'lucide-react';
+import { Calendar, Stethoscope, CheckCircle2, GraduationCap, Clock, MessageSquare } from 'lucide-react';
 import { SectionHeading } from '../common/SectionHeading';
 import { CLINIC_INFO } from '../../config/clinicData';
 import { IMAGES } from '../../config/images';
@@ -12,8 +12,11 @@ export function Doctors({ onSelectDoctorForBooking }) {
     { src: IMAGES.doctors.drVirendra.secondary, label: 'Consultation' },
   ];
 
+  const doc1 = CLINIC_INFO.doctors[0]; // Dr. Virendra Kumawat
+  const doc2 = CLINIC_INFO.doctors[1]; // Dr. Kamlesh Mahariya
+
   return (
-    <section id="doctors" className="py-16 sm:py-24 bg-white relative">
+    <section id="doctors" className="py-12 sm:py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <SectionHeading
@@ -23,7 +26,7 @@ export function Doctors({ onSelectDoctorForBooking }) {
         />
 
         {/* Doctors Grid (2 Doctors: Dr. Virendra Kumawat FIRST, Dr. Kamlesh Mahariya SECOND) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto mt-8">
           
           {/* Doctor 1: Dr. Virendra Kumawat (MUST APPEAR FIRST) */}
           <div className="bg-slate-50/90 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-teal-300 transition-all duration-300 overflow-hidden flex flex-col group">
@@ -33,6 +36,10 @@ export function Doctors({ onSelectDoctorForBooking }) {
                 src={drVirendraPhotos[drVirendraPhotoIndex].src}
                 alt={IMAGES.doctors.drVirendra.alt}
                 className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="480"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
               
@@ -58,14 +65,14 @@ export function Doctors({ onSelectDoctorForBooking }) {
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="px-2.5 py-0.5 rounded-full bg-teal-700 text-white text-xs font-bold">
-                    {CLINIC_INFO.doctors[0].degree}
+                    {doc1.degree}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full bg-slate-800/90 text-teal-200 text-xs font-semibold border border-slate-700">
-                    {CLINIC_INFO.doctors[0].experience}
+                    {doc1.experience}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold tracking-tight text-white">
-                  {CLINIC_INFO.doctors[0].name}
+                  {doc1.name}
                 </h3>
               </div>
             </div>
@@ -75,7 +82,7 @@ export function Doctors({ onSelectDoctorForBooking }) {
               <div className="space-y-3.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-teal-800">
                   <Stethoscope className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>{CLINIC_INFO.doctors[0].role}</span>
+                  <span>{doc1.role}</span>
                 </div>
 
                 {/* Qualification & Experience Pills */}
@@ -86,21 +93,21 @@ export function Doctors({ onSelectDoctorForBooking }) {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 font-medium">
                     <Clock className="w-3.5 h-3.5 text-slate-500" />
-                    <span>2+ Years Clinical Practice</span>
+                    <span>{doc1.experience}</span>
                   </span>
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {CLINIC_INFO.doctors[0].bio}
+                  {doc1.bio}
                 </p>
 
-                {/* Focus Areas */}
-                <div className="pt-2">
+                {/* Focus Areas (Exact 4) */}
+                <div className="pt-1">
                   <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
                     Clinical Focus Areas:
                   </p>
                   <ul className="space-y-1.5">
-                    {CLINIC_INFO.doctors[0].focusAreas.map((focus, idx) => (
+                    {doc1.focusAreas.map((focus, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-slate-700">
                         <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                         <span>{focus}</span>
@@ -110,19 +117,29 @@ export function Doctors({ onSelectDoctorForBooking }) {
                 </div>
               </div>
 
-              {/* Action */}
-              <div className="pt-4 border-t border-slate-200">
+              {/* Action Buttons */}
+              <div className="pt-4 border-t border-slate-200 space-y-2">
+                <a
+                  href={doc1.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold shadow-xs transition-all active:scale-98"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Book Consultation on WhatsApp ({doc1.whatsappNumber})</span>
+                </a>
+
                 <button
                   onClick={() => {
-                    if (onSelectDoctorForBooking) onSelectDoctorForBooking(CLINIC_INFO.doctors[0].name);
+                    if (onSelectDoctorForBooking) onSelectDoctorForBooking(doc1.name);
                     const el = document.getElementById('appointment');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
                   type="button"
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold shadow-xs transition-all active:scale-98 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>Book Consultation with Dr. Virendra</span>
+                  <Calendar className="w-3.5 h-3.5 text-teal-700" />
+                  <span>Schedule via Appointment Form</span>
                 </button>
               </div>
             </div>
@@ -136,6 +153,10 @@ export function Doctors({ onSelectDoctorForBooking }) {
                 src={IMAGES.doctors.drKamlesh.src}
                 alt={IMAGES.doctors.drKamlesh.alt}
                 className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="480"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent" />
               
@@ -143,14 +164,14 @@ export function Doctors({ onSelectDoctorForBooking }) {
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="px-2.5 py-0.5 rounded-full bg-teal-700 text-white text-xs font-bold">
-                    {CLINIC_INFO.doctors[1].degree}
+                    {doc2.degree}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full bg-slate-800/90 text-teal-200 text-xs font-semibold border border-slate-700">
-                    {CLINIC_INFO.doctors[1].experience}
+                    {doc2.experience}
                   </span>
                 </div>
                 <h3 className="text-xl font-bold tracking-tight text-white">
-                  {CLINIC_INFO.doctors[1].name}
+                  {doc2.name}
                 </h3>
               </div>
             </div>
@@ -160,7 +181,7 @@ export function Doctors({ onSelectDoctorForBooking }) {
               <div className="space-y-3.5">
                 <div className="flex items-center gap-2 text-xs font-bold text-teal-800">
                   <Stethoscope className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>{CLINIC_INFO.doctors[1].role}</span>
+                  <span>{doc2.role}</span>
                 </div>
 
                 {/* Qualification & Experience Pills */}
@@ -171,21 +192,21 @@ export function Doctors({ onSelectDoctorForBooking }) {
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 font-medium">
                     <Clock className="w-3.5 h-3.5 text-slate-500" />
-                    <span>2+ Years Clinical Practice</span>
+                    <span>{doc2.experience}</span>
                   </span>
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {CLINIC_INFO.doctors[1].bio}
+                  {doc2.bio}
                 </p>
 
-                {/* Focus Areas */}
-                <div className="pt-2">
+                {/* Focus Areas (Exact 4) */}
+                <div className="pt-1">
                   <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
                     Clinical Focus Areas:
                   </p>
                   <ul className="space-y-1.5">
-                    {CLINIC_INFO.doctors[1].focusAreas.map((focus, idx) => (
+                    {doc2.focusAreas.map((focus, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-slate-700">
                         <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                         <span>{focus}</span>
@@ -195,19 +216,29 @@ export function Doctors({ onSelectDoctorForBooking }) {
                 </div>
               </div>
 
-              {/* Action */}
-              <div className="pt-4 border-t border-slate-200">
+              {/* Action Buttons */}
+              <div className="pt-4 border-t border-slate-200 space-y-2">
+                <a
+                  href={doc2.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold shadow-xs transition-all active:scale-98"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Book Consultation on WhatsApp ({doc2.whatsappNumber})</span>
+                </a>
+
                 <button
                   onClick={() => {
-                    if (onSelectDoctorForBooking) onSelectDoctorForBooking(CLINIC_INFO.doctors[1].name);
+                    if (onSelectDoctorForBooking) onSelectDoctorForBooking(doc2.name);
                     const el = document.getElementById('appointment');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
                   type="button"
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold shadow-xs transition-all active:scale-98 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>Book Consultation with Dr. Kamlesh</span>
+                  <Calendar className="w-3.5 h-3.5 text-teal-700" />
+                  <span>Schedule via Appointment Form</span>
                 </button>
               </div>
             </div>

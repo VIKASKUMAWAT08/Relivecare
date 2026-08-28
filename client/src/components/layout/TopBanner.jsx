@@ -21,7 +21,7 @@ export function TopBanner() {
           <span className="hidden sm:inline text-slate-700">|</span>
 
           <a
-            href={CLINIC_INFO.location.directionsUrl}
+            href={CLINIC_INFO.googleStats.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-slate-800/90 hover:bg-slate-800 px-2.5 py-0.5 rounded-full border border-slate-700 text-amber-300 font-medium transition-colors"

@@ -33,12 +33,23 @@
     font-family: var(--font-sans);
     color: #334155;
     background-color: #f8fafc;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: #0f172a;
     letter-spacing: -0.02em;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -67,8 +78,8 @@
 
 /* Smooth custom scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {

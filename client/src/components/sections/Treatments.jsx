@@ -26,7 +26,7 @@ export function Treatments({ onSelectTreatmentForBooking }) {
     : TREATMENTS_DATA.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="treatments" className="py-16 sm:py-24 bg-white relative">
+    <section id="treatments" className="py-12 sm:py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <SectionHeading
@@ -36,12 +36,12 @@ export function Treatments({ onSelectTreatmentForBooking }) {
         />
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-4 pt-2 gap-2 scrollbar-none mb-10">
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-3 pt-1 gap-2 scrollbar-none mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-teal-700 text-white shadow-xs'
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
@@ -52,12 +52,12 @@ export function Treatments({ onSelectTreatmentForBooking }) {
           ))}
         </div>
 
-        {/* 12 Treatments Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Treatments Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredTreatments.map((treatment) => (
             <div
               key={treatment.id}
-              className="bg-white rounded-2xl border border-slate-200 shadow-xs hover:shadow-xl hover:border-teal-300 transition-all duration-300 flex flex-col overflow-hidden group"
+              className="bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-xl hover:border-teal-300 transition-all duration-300 flex flex-col overflow-hidden group"
             >
               {/* Card Image */}
               <div className="relative aspect-16/10 overflow-hidden bg-slate-100">
@@ -66,6 +66,9 @@ export function Treatments({ onSelectTreatmentForBooking }) {
                   alt={treatment.alt}
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="250"
                 />
                 <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-full border border-slate-700/60">
                   {treatment.category}
@@ -112,7 +115,7 @@ export function Treatments({ onSelectTreatmentForBooking }) {
                     type="button"
                     className="inline-flex items-center gap-1 text-xs font-bold text-teal-700 hover:text-teal-900 group-hover:underline transition-all cursor-pointer"
                   >
-                    <span>View Treatment Details</span>
+                    <span>View Details</span>
                     <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </button>
 

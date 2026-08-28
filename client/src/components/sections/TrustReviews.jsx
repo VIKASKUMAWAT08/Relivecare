@@ -31,7 +31,7 @@ export function TrustReviews() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Google Reviews Banner */}
-        <div className="bg-gradient-to-r from-teal-900 via-slate-900 to-teal-950 rounded-2xl p-6 sm:p-8 text-white shadow-xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6 border border-teal-800/40">
+        <div className="bg-gradient-to-r from-teal-900 via-slate-900 to-teal-950 rounded-2xl p-6 sm:p-8 text-white shadow-xl mb-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-teal-800/40">
           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
             {/* Google Rating Emblem */}
             <div className="w-16 h-16 rounded-2xl bg-white text-slate-900 flex flex-col items-center justify-center shadow-md shrink-0">
@@ -55,14 +55,14 @@ export function TrustReviews() {
                 </span>
               </div>
               <p className="text-sm text-slate-300 mt-1 max-w-xl">
-                Providing dedicated physiotherapy, joint recovery, and personalized rehabilitation for patients at our Pachar center.
+                Providing dedicated physical therapy, joint recovery, home visits, and personalized rehabilitation for patients at our Pachar center.
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href={CLINIC_INFO.location.directionsUrl}
+              href={CLINIC_INFO.googleStats.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition-colors"
@@ -74,7 +74,7 @@ export function TrustReviews() {
         </div>
 
         {/* 4 Clinical Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
